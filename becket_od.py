@@ -1,3 +1,5 @@
+import csv
+
 class Village(object):
 
     def __init__(self):
@@ -17,7 +19,11 @@ class Village(object):
         else:
             return False
 
-
+    def importStaff(self):
+        with open('staff.csv') as csvfile:
+            reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+            for rows in reader:
+                self.addStaffMember(rows[0], int(rows[1]))
 
     def deleteStaffMember(self, name):
         """
@@ -27,9 +33,10 @@ class Village(object):
         for member in self.staff:
             if member[0] == name:
                 self.staff.remove(member)
-                return True #i think this will end loop
+                return True
 
         return False
+
 
     def setSchedule(self, numDays , peoplePerDay):
         """
@@ -51,5 +58,5 @@ class Village(object):
         
 
 fro = Village()
-fro.setSchedule(5,1)
-print(fro.schedule)
+fro.importStaff()
+print(fro.staff)
