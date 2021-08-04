@@ -37,6 +37,16 @@ class Village(object):
 
         return False
 
+    
+
+    def sortMembers(self):
+        """
+        Sort the staff members given the following requirements:
+            -Must be at least one member with several years of expereience
+            -priority given to older staff for overscheduling
+        """
+        self.staff.sort(key=lambda x: x[1])
+
 
     def setSchedule(self, numDays , peoplePerDay):
         """
@@ -59,4 +69,5 @@ class Village(object):
 
 fro = Village()
 fro.importStaff()
+fro.sortMembers()
 print(fro.staff)
