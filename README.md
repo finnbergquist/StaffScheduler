@@ -1,6 +1,6 @@
 # Staff Time Off Management System
 
-This project is a simple staff management system for a village, implemented in Python. It allows you to manage staff members, import staff data from a CSV file, sort staff members based on their experience, and generate a schedule for staff members over a number of days.
+This project is a simple staff management system, implemented in Python. It allows you to manage staff members, import staff data from a CSV file, sort staff members based on their experience, and generate a schedule for staff members over a number of days. It was built using 'villages', which represent sub-units of the total staff.
 
 ## Features
 
